@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function demSoLanXuatHien(mang, soCanDem) {
+    let dem = 0;
+    for (let i = 0; i < mang.length; i++) {
+      if (mang[i] === soCanDem) {
+        dem++;
+      }
+    }
+    return dem;
+  }
+  let mangSoNguyen = [1, 2, 3, 2, 4, 2, 5];
+  let soCanDem = 2;
+  let soLanXuatHien = demSoLanXuatHien(mangSoNguyen, soCanDem);
+  alert(`Số ${soCanDem} xuất hiện ${soLanXuatHien} lần trong mảng.`);
+</script>
+</body>
+</html>

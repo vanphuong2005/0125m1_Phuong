@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let mangSoNguyen = [5, 10, 15, 20, 25];
+  let soLonNhat = timSoLonNhat(mangSoNguyen);
+  function timSoLonNhat(mang) {
+    let soLonNhat = mang[0]; // Giả sử phần tử đầu tiên là lớn nhất
+    for (let i = 1; i < mang.length; i++) {
+      if (mang[i] > soLonNhat) {
+        soLonNhat = mang[i];
+      }
+    }
+    return soLonNhat;
+  }
+  alert(soLonNhat)
+</script>
+</body>
+</html>

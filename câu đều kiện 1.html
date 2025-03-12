@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function kiemTraChiaHet(a, b) {
+    if (b === 0) {
+      return "Không thể chia cho 0";
+    }
+    if (a % b === 0) {
+      return `${a} chia hết cho ${b}`;
+    } else {
+      return `${a} không chia hết cho ${b}`;
+    }
+  }
+
+  // Ví dụ sử dụng
+  console.log(kiemTraChiaHet(10, 2)); // Kết quả: 10 chia hết cho 2
+  console.log(kiemTraChiaHet(7, 3));  // Kết quả: 7 không chia hết cho 3
+</script>
+</body>
+</html>

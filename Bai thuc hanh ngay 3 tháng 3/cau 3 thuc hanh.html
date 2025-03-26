@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính số ngày trong tháng</h1>
+<label for="monthYearInput">Nhập tháng/năm (MM/YYYY):</label>
+<input type="text" id="monthYearInput">
+<button onclick="tinhVaHienThi()">Tính</button>
+<p id="result"></p>
+<script>
+    function tinhSoNgayTrongThang(thangNam) {
+        const regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+        if (!regex.test(thangNam)) {
+            return "Không hợp lệ. Nhập lại MM/YYYY.";
+        }
+        const [thang, nam] = thangNam.split('/').map(Number);
+        if (thang < 1 || thang > 12) {
+            return "Tháng không hợp lệ.";
+        }
+        if (nam < 1) {
+            return "Năm không hợp lệ.";
+        }
+        if (thang === 2) {
+            if ((nam % 4 === 0 && nam % 100 !== 0) || nam % 400 === 0) {
+                return 29;
+            } else {
+                return 28;
+            }
+        } else if ([4, 6, 9, 11].includes(thang)) {
+            return 30;
+        } else {
+            return 31;
+        }
+    }
+    function tinhVaHienThi() {
+        const monthYearInput = document.getElementById("monthYearInput");
+        const resultElement = document.getElementById("result");
+        const thangNam = monthYearInput.value;
+
+        const soNgay = tinhSoNgayTrongThang(thangNam);
+        resultElement.textContent = soNgay;
+    }
+</script>
+</body>
+</html>
